@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>button hover</title>
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+        body {
+            font-family: Roboto;
+        }
+    .container {
+        height: 500px;
+        background-color: #00b0ff;
+    }
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: .75em;
+        }
+
+        .wrapper {
+            display: table;
+            height: 100%;
+            width: 100%;
+        }
+
+        .container {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 10px;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            position: relative;
+            font-weight: 400;
+            text-transform: uppercase;
+            cursor: pointer;
+            vertical-align: middle;
+            margin: 0 auto 2em;
+            width: 100%;
+            max-width: 160px;
+        }
+
+        svg {
+            position: absolute;
+            height: 45px;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .btn-1 {
+            background-color: #10a4e6;
+            font-weight: 100;
+        }
+
+        rect {
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2;
+            stroke-dasharray: 422,0;
+        }
+
+        .btn-1:hover {
+            font-weight: 900;
+            letter-spacing: 1px;
+            transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .btn-1:hover rect {
+            stroke-width: 5;
+            stroke-dasharray: 15, 310;
+            stroke-dashoffset: 48;
+            transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+    </style>
+</head>
+<body>
+
+<pre>
+    Мы добавляем элемент <*animate> внутрь элемента <*svg>, который будем анимировать. Элемент <*animate> содержит следующие атрибуты:+
+
+    attributeName: здесь определяется атрибут, который будет участвовать в анимации.
+
+    from: опциональный атрибут. Определяет стартовое значение, по умолчанию используется текущее значение.
+
+    to: данный атрибут определяет направление анимации. В зависимости от заданного в атрибуте attributeName значения результат может различаться.
+    В приведенном примере будет изменяться высота элемента.
+
+    dur: определяется длительность анимации. Значение нужно задавать в формате Clock Value Syntax.
+    Например, 02:33 соответствует 2 минутам и 33 секундам, а 3h соответствует 3 часам.
+    Для нашего примера мы определяем длительность анимации в 3 секунды.
+</pre>
+
+
+<div class="wrapper">
+<div class="container">
+    <a href="#" class="btn btn-1">
+        <svg>
+            <rect height="100%" width="100%" x="0" y="0" fill="none"></rect>
+        </svg>
+        HOVER
+    </a>
+</div>
+</div>
+
+
+</body>
+</html>
