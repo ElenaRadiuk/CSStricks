@@ -5,11 +5,22 @@
     <title>checkbox svg</title>
     <style>
 
-       
+        .wrapper {
+            text-align: center;
+            padding-top: 100px;
+        }
+        .wrapper_checkbox {
+            display: inline-block;
+            line-height: 25px;
+        }
+        .wrapper_checkbox span {
+            display: inline-block;
+            margin-left: 5px;
+        }
         svg {
             position: absolute;
-            top: 0px;
-            left: 0px;
+            top: -2px;
+            left: -2px;
         }
         path {
         fill: none;
@@ -28,8 +39,8 @@
             stroke-width: 2;
             stroke-linecap: round;
             stroke-linejoin: round;
-            stroke-dasharray: 20px;
-            stroke-dashoffset: 20px;
+            stroke-dasharray: 18px;
+            stroke-dashoffset: 18px;
             transition: all .3s ease;
         }
 
@@ -55,8 +66,8 @@
         } 
         label .chbox_svg {
             position: relative;
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             border: 2px solid #C8CCD4;
             border-radius: 3px;
             float: left;
@@ -68,6 +79,7 @@
 </head>
 <body>
 
+    <div class="wrapper">
     <div class="wrapper_checkbox">
         <label for="chbox" class="label_svg">
             <input id="chbox" type="checkbox" class="chbox_input">
@@ -80,6 +92,6 @@
         </label>
         <span>Checkbox</span>
     </div>
-
+    </div>
 </body>
 </html>
