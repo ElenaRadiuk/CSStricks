@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>pictures the same size</title>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .container {
+            max-width: 1200px;
+            text-align: center;
+        }
+        .img-box {
+            width: 20%;
+            display: inline-block;
+            margin: 25px 10px;
+        }
+        .img-box img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        p {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="wrapper">
+        <div class="container">
+            <div class="img-box">
+                <img src="img/home_1-768x444.jpg">
+            </div>
+            <div class="img-box">
+                <img src="img/home_2-300x173.jpg">
+            </div>
+            <div class="img-box">
+                <img src="img/home_3-150x150.jpg">
+            </div>
+            <div class="img-box">
+                <img src="img/home_3-300x173.jpg">
+            </div>
+            <div class="img-box">
+                <img src="img/home_4-300x173.jpg">
+            </div>
+            <div class="img-box">
+                <img src="img/home_4-768x444.jpg">
+            </div>
+            <div class="img-box">
+                <img src="img/home_5.jpg">
+            </div>
+            <div class="img-box">
+                <img src="img/home_2-300x173.jpg">
+            </div>
+        </div>
+
+            <p>
+                object-fit: cover;
+                object-fit может иметь одно из 5 значений:
+
+                <pre>
+                1.   contain: Размер контента (например, изображения) будет изменен, чтобы отобразить его целиком с сохранением первоначального соотношения сторон,
+                     но при этом уместиться в размеры, заданные элементом.
+
+                2.   fill: Размер контента будет увеличен, чтобы заполнить размеры, заданные элементом,
+                     даже если при этом будет нарушено первоначальное соотношение сторон.
+
+                3.   cover: Сохранение соотношения сторон контента, но изменение его ширины и высоты.
+                     Таким образом, контент полностью покрывает элемент. Меньшая из двух сторон изменяется до размеров контейнера, а большая – выходит за рамки элемента и обрезается.
+
+                4.   none: Полностью игнорирует высоту или ширину, заданные контейнером,
+                     и просто использует оригинальный размер контента замещаемого элемента.
+
+                5.   scale-down: Размер контента задается либо как при указании none, либо как при contain,
+                     смотря что из этого даст меньший размер замещаемого элемента в итоге.
+
+                     object-position действует так же, как background-position при работе с фоновыми изображениями.
+                </pre>
+             </p>
+    </main>
+</body>
+</html>
