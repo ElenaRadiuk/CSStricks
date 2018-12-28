@@ -1,0 +1,274 @@
+body {
+    font-family: Arial;
+}
+
+.test_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 155px 0;
+}
+
+.test_btn button {
+    background-color: #dd3333;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    padding: 11px 24px 11px;
+    text-decoration: none;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    color: white;
+}
+
+.test_btn button:hover {
+    background: #333333;
+    outline: none;
+}
+
+button.close {
+    border: none;
+    cursor: pointer;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    height: 0;
+    background-color: transparent;
+    transition: background-color 0.25s ease;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.modal.open {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal.open > .content-wrapper {
+    transform: scale(1);
+}
+
+.modal .content-wrapper h2 {
+    margin: 20px 0 15px;
+}
+
+
+.modal .content-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 30%;
+    align-items: center;
+    transform: scale(0);
+    transition: transform 0.35s;
+    transition-delay: 0.15s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal .content-wrapper .close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: 0.25s linear;
+    background-color: transparent;
+    width: 20px;
+    height: 40px;
+}
+
+.modal .content-wrapper .close:before, .modal .content-wrapper .close:after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    width: 3px;
+    height: 20px;
+    transform-origin: 50% 50% 0;
+}
+
+.modal .content-wrapper .close:before {
+    transform: rotate(-45deg);
+}
+
+.modal .content-wrapper .close:after {
+    transform: rotate(45deg);
+}
+
+.modal .content-wrapper .close:hover {
+    transform: rotate(360deg);
+    transform-origin: 50% 50% 0;
+}
+
+.modal .content-wrapper .close:hover:after, .modal .content-wrapper .close:hover:before {
+    background-color: red;
+}
+
+.modal .content-wrapper .modal-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+}
+.modal .content-wrapper .content {
+    position: relative;
+    display: flex;
+}
+
+.order-form-content {
+    width: 100%;
+    padding: 5px 25px;
+}
+
+.modal .fancy-inputs {
+    padding: 0 25px 25px;
+}
+
+.modal .fancy-inputs input {
+    border-radius: 0;
+    outline: none;
+    height: 40px;
+    z-index: 1;
+    position: relative;
+    background: none;
+    width: 100%;
+    border: none;
+    border-bottom: 3px solid lightgrey;
+}
+
+.input-container {
+    position: relative;
+    margin: 15px 0;
+}
+
+.modal .fancy-inputs label {
+    color: #757575;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 40px;
+    transition: 0.2s ease;
+}
+
+.modal textarea:focus {
+    border: 0;
+    border-bottom: 3px solid lightgrey;
+    outline: none;
+}
+
+.modal textarea {
+    border: 0;
+    border-bottom: 3px solid lightgrey;
+    max-height: 150px;
+    resize: none;
+    width: 100%;
+}
+
+.fancy-inputs .input-container label.input .your-message + span {
+    height: 100%;
+}
+
+.fancy-inputs .input-container label.input .f-span {
+    width: 100%;
+    height: 46px;
+    line-height: 44px;
+    position: absolute;
+    left: 0;
+    cursor: text;
+}
+.fancy-inputs label .f-span:before {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #2C3E50;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+}
+
+.fancy-inputs label .f-span:after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #2C3E50;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+}
+
+.fancy-inputs .f-span.activeF span {
+    cursor: initial;
+    position: absolute;
+    color: #9d9d9d;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -webkit-transform: translate(-12%, -50%) scale(0.75);
+    transform: translate(-12%, -50%) scale(0.75);
+}
+
+.fancy-inputs .input-container label.input .f-span.activeF:before {
+    width: 51%;
+}
+.fancy-inputs .input-container label.input .f-span.activeF:after {
+    width: 50%;
+}
+
+.modal .fancy-inputs input.wpcf7-form-control.wpcf7-submit {
+    background-color: red;
+    border: none;
+    margin-top: 20px;
+}
+
+.modal .fancy-inputs input.wpcf7-form-control.wpcf7-submit:hover {
+    background: #333333;
+    outline: none;
+}
+
+.modal span.wpcf7-not-valid-tip {
+    font-size: 14px;
+    line-height: 16px;
+    position: absolute;
+    right: 0;
+}
+
+.modal h2 {
+    font-size: 26px;
+}
+
+
+@media screen and (max-width: 499px){
+    .modal .content-wrapper {
+        width: 80%;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 990px){
+    .modal .content-wrapper {
+        width: 50%;
+    }
+}

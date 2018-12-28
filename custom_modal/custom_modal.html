@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>modal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="test_btn">
+    <button  data-modal-trigger="trigger-1" class="trigger">
+        link to modal
+    </button>
+</div>
+
+<div data-modal="trigger-1" class="modal">
+    <article class="content-wrapper">
+        <button class="close"></button>
+        <header class="modal-header">
+            <h2>Order</h2>
+        </header>
+        <div class="order-form-content">
+            <div role="form" class="wpcf7">
+                <form action="#" method="post" class="wpcf7-form" novalidate="novalidate">
+                    <div class="fancy-inputs">
+                        <div class="input-container">
+                            <label class="input"><span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span><span class="f-span"><span>Username</span></span></label>
+                        </div>
+                        <div class="input-container">
+                            <label class="input"><span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" /></span><span class="f-span"><span>Email</span></span></label>
+                        </div>
+                        <div class="input-container">
+                            <label class="input"><span class="wpcf7-form-control-wrap your-phone"><input type="text" name="your-address" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email" aria-required="true" aria-invalid="false" /></span><span class="f-span"><span>Address</span></span></label>
+                        </div>
+                        <input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </article>
+</div>
+
+
+<script>
+    (function ($){
+        $(window).load(function () {
+            var btnPopup = document.querySelectorAll('.trigger');
+
+            for (var btn of btnPopup) {
+                modalEvent(btn);
+            }
+
+            function modalEvent(btn) {
+                btn.addEventListener('click', function () {
+                    var trigger = btn.getAttribute('data-modal-trigger');
+                    var modal = document.querySelector((`[data-modal=${trigger}]`));
+                    var contentWrapper = document.querySelector('.content-wrapper');
+                    var close = document.querySelector('.close');
+
+
+                    close.addEventListener('click', function () {
+                        modal.classList.remove('open');
+                    });
+                    modal.addEventListener('click', function () {
+                        modal.classList.remove('open');
+                    });
+
+                    contentWrapper.addEventListener('click', function (e) {
+                        e.stopPropagation()
+                    });
+
+                    modal.classList.toggle('open');
+
+                })
+            }
+
+            var inputFocus = $('.input input, .input textarea');
+
+            inputFocus.focus(function() {
+                console.log('test');
+                $(this).parent().next('.f-span').addClass('activeF');
+                console.log($(this).val());
+            });
+
+            inputFocus.blur(function(){
+                if($(this).val().length == 0){
+                    $(this).parent().next('.f-span').removeClass('activeF');
+                }
+            });
+
+        })
+    })(jQuery);
+</script>
+</body>
+</html>
